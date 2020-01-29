@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getting started with javascript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css  ">
+    <style>
+        body, .jumbotron{
+            padding: 30px;
+        }
+        .text-giant{
+            font-size: 40px;
+        }
+        .singleT {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class>
+    <blockquote class="blockquote">
+        <p class="mb-0">Designing API's</p>
+        <footer class="blockquote-footer">Use Noun not verbs for Designing endpoints e.g(/products, /products/198110) not /getAllProducts or getProductById</footer>
+        <footer class="blockquote-footer">Use of right HTTP methods (GET, POST, DELETE, PUT/PATCH)</footer>
+        <footer class="blockquote-footer">Use parameters e.g /product?name="alex" not to be like getProductByName</footer>
+        <footer class="blockquote-footer">Use proper HTTP codes. 200 ok, 
+            <p>201->created This can be used when you use POST method to create a new resource,</p>
+            <p>400->Bad Request This can be used when client side input validation fails.</p>
+            <p>401 UNAUTHORIZED->This can be used if the user or the system is not authorised to perform certain operation.</p>
+            <p>500 INTERNAL SERVER ERROR</p>
+        </footer>
+    </blockquote>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

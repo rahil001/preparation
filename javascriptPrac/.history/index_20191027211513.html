@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getting started with javascript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css  ">
+    <style>
+        body, .jumbotron{
+            padding: 30px;
+        }
+        .text-giant{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class>
+    <b>Question: Things that happens in one tick;<b>
+    <div>
+        <div>
+        1. Node looks for pending timers like  are ready to be called (timeout, interval, immediate)
+        </div>
+        <div>
+        2. Node looks for pending OS pending operations and calls revelant callbacks.
+        </div>
+    </div>
+    <div>
+    Event Loop is a single threaded. But behind the scene c++ part of Node is comprises of libUV which has 4 threads(thread pool) by default
+    <div>So Node js offloads the computationally expensive task to libuv (thread pool multithreaded)</div>
+    </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

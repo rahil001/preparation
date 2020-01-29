@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getting started with javascript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css  ">
+    <style>
+        body, .jumbotron{
+            padding: 30px;
+        }
+        .text-giant{
+            font-size: 40px;
+        }
+        .singleT {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class>
+    <b>Question: Things that happens in one tick;<b>
+    <div>
+        <div>
+        1. Node looks for pending timers like  are ready to be called (timeout, interval, immediate)
+        </div>
+        <div>
+        2. Node looks for pending OS operations and calls revelant callbacks.
+        </div>
+        <div>
+        2. Node looks for pending OS Tasks and calls revelant callbacks.
+        </div>
+    </div>
+    <div class="singleT">
+        Event Loop is a single threaded. But behind the scene c++ part of Node is comprises of libUV which has 4 threads(thread pool) by default
+        <div>So Node js offloads the computationally expensive task to libuv (thread pool multithreaded)</div>
+    </div>
+    <table class="table table-striped w-auto">
+        <thead>
+          <tr>
+            <th>Questions</th>
+            <th>Answers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-info success">
+            <th scope="row">1</th>
+            <td>Can we use threadpool for javascript code or can only node js fucntions use it ?</td>
+            <td>we can write custom js that uses the thread pool</td>
+          </tr>
+          <tr class="table-info success">
+            <th scope="row">2</th>
+            <td>What functions in Node std library uses the threadpool ?</td>
+            <td>All file system and crypto modules stuff. Also depends on OS</td>
+          </tr>
+          <tr class="table-info success">
+            <th scope="row">3</th>
+            <td>How does threadpool stuff fit in eventLoop ?</td>
+            <td>TaskRunning in the threadpool are the `pendingOperation` that node js checks during a single tick.</td>
+          </tr>
+          <tr class="table-info success">
+            <th scope="row">3</th>
+            <td>What functions in Node std library are handled by OS's asyns features?</td>
+            <td>Almost everything around networking for all Os's. Some other stuff is OS specific</td>
+          </tr>
+          <tr class="table-info success">
+            <th scope="row">3</th>
+            <td>What functions in Node std library are handled by OS's asyns features?</td>
+            <td>Almost everything around networking for all Os's. Some other stuff is OS specific</td>
+          </tr>
+        </tbody>      
+      </table>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

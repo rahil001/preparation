@@ -101,3 +101,30 @@ const Singlton = function() {
      }
      return temp;
  }
+
+ function curry(fn) {
+    if(fn.length === 0) {
+        return fn.apply();
+    }
+    function nest(N, args) {
+        return function() {
+            var arg = [].slice.apply(arguments);
+            if(N - arg.length <= 0) {
+                return fn.apply(null, args.concat(arg));
+            }
+            args = args.concat(arg);
+            return nest(N - args.length, args);
+        }
+    }
+    return nest(fn.length, []);
+  }
+  
+  var sum = function (x, y, z) {
+    return x + y + z;
+  }
+  
+  var result = curry(sum);
+  console.log(result(1)(2)(3));
+  console.log(result(1, 2)(3));
+  console.log(result(1)(2, 3));
+  
